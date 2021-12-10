@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function clickHandler() {
         if (this.childElementCount !== 0) {
-            console.log('ya tut');
             let newRandomCell = this.cellOrder;
             while (newRandomCell === this.cellOrder) {
                 newRandomCell = Math.round(Math.random() * (gridCells.length - 1));
