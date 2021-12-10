@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
             let price = parseFloat(checkboxContent.slice(1));
 
             if (this.checked) {
-                totalElement.textContent = price + parseFloat(totalElement.textContent);
+                let newTotalPrice = price + parseFloat(totalElement.textContent);
+                totalElement.textContent = Number.isInteger(newTotalPrice) ? newTotalPrice.toFixed(1) : newTotalPrice;
             }
             if (!this.checked) {
-                totalElement.textContent = parseFloat(totalElement.textContent) - price;
+                let newTotalPrice = parseFloat(totalElement.textContent) - price;
+                totalElement.textContent = Number.isInteger(newTotalPrice) ? newTotalPrice.toFixed(1) : newTotalPrice;
             }
         }
     }
